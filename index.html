@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>İK talep listesi</title><style>
+:root {
+  --kagit:#FAFAF8; --kart:#FFFFFF; --murekkep:#1B1B1F; --ikincil:#6C6C74;
+  --cizgi:#E5E4DF; --uyari:#9E2B3F; --uyari-zemin:#FAEDEF; --sakin:#2E6A4E;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; padding:2rem 1.25rem 4rem; background:var(--kagit);
+  color:var(--murekkep); font:16px/1.55 -apple-system,"Segoe UI",Roboto,
+  "Helvetica Neue",Arial,sans-serif; font-variant-numeric:tabular-nums;
+}
+.sayfa { max-width:1180px; margin:0 auto; }
+h1 { font-size:1.3rem; font-weight:650; margin:0 0 .15rem; letter-spacing:-.01em; }
+.zaman { color:var(--ikincil); font-size:.85rem; margin:0 0 1.75rem; }
+.durum-cumlesi {
+  font-size:1.45rem; font-weight:600; line-height:1.35; margin:0 0 .4rem;
+  max-width:34ch; letter-spacing:-.015em;
+}
+.durum-cumlesi.dikkat { color:var(--uyari); }
+.durum-cumlesi.temiz { color:var(--sakin); }
+.alt-bilgi { color:var(--ikincil); font-size:.9rem; margin:0 0 2rem; }
+.suzgec { display:flex; flex-wrap:wrap; gap:.4rem; margin:0 0 1rem; }
+.suzgec button {
+  font:inherit; font-size:.85rem; padding:.32rem .8rem; border-radius:999px;
+  border:1px solid var(--cizgi); background:var(--kart); color:var(--ikincil);
+  cursor:pointer;
+}
+.suzgec button[aria-pressed="true"] {
+  background:var(--murekkep); border-color:var(--murekkep); color:#fff;
+}
+.suzgec button:focus-visible { outline:2px solid var(--murekkep); outline-offset:2px; }
+.suzgec .indir {
+  margin-left:auto; align-self:center; font-size:.85rem; color:var(--ikincil);
+  text-decoration:none; border-bottom:1px solid var(--cizgi);
+}
+.suzgec .indir:hover { color:var(--murekkep); border-color:var(--murekkep); }
+.sarmal { overflow-x:auto; border:1px solid var(--cizgi); border-radius:10px;
+          background:var(--kart); }
+table { border-collapse:collapse; width:100%; font-size:.88rem; }
+th {
+  text-align:left; font-weight:600; color:var(--ikincil); white-space:nowrap;
+  padding:.7rem .8rem; border-bottom:1px solid var(--cizgi); position:sticky;
+  top:0; background:var(--kart);
+}
+td { padding:.65rem .8rem; border-bottom:1px solid var(--cizgi);
+     vertical-align:top; max-width:20rem; }
+tr:last-child td { border-bottom:0; }
+tr.dikkat td { background:var(--uyari-zemin); }
+td.no { font-weight:600; white-space:nowrap; }
+.rozetler { display:flex; flex-wrap:wrap; gap:.3rem; }
+.rozet {
+  padding:.12rem .5rem; border-radius:5px; font-size:.78rem; background:#fff;
+  border:1px solid var(--cizgi); color:var(--ikincil); white-space:nowrap;
+}
+.rozet.onemli { border-color:var(--uyari); color:var(--uyari); }
+.bos { padding:3rem 1rem; text-align:center; color:var(--ikincil); }
+.serit {
+  margin:0 0 1.5rem; padding:.55rem .9rem; border-radius:8px;
+  background:#FFF6E5; border:1px solid #E8D3A8; color:#6B5320;
+  font-size:.85rem;
+}
+.ozet { margin:2.5rem 0 0; max-width:640px; }
+.ozet h2 { font-size:1rem; font-weight:600; margin:0 0 .7rem; }
+.zarf {
+  border:1px solid var(--cizgi); border-radius:10px; background:var(--kart);
+  padding:1rem 1.1rem;
+}
+.zarf .konu { margin:0 0 .6rem; font-weight:600; }
+.zarf ul { margin:0; padding-left:1.1rem; color:var(--ikincil);
+           font-size:.88rem; }
+.zarf li { margin:.2rem 0; }
+.ozet-not { color:var(--ikincil); font-size:.85rem; margin:.8rem 0 0;
+            max-width:52ch; }
+@media (max-width:640px) { body { padding:1.25rem .75rem 3rem; }
+  .durum-cumlesi { font-size:1.2rem; } }
+</style></head>
+<body><div class="sayfa">
+<p class="serit">Örnek veriler — gerçek talep değildir. Sayfa her sabah yeniden üretilir.</p>
+<h1>İK talep listesi</h1>
+<p class="zaman">08.09.2026 17:47 itibarıyla</p>
+<p class="durum-cumlesi dikkat">4 talep ilgilenmenizi bekliyor.</p><p class="alt-bilgi">Toplam 7 talep izleniyor.</p>
+<div class="suzgec">
+  <button data-suzgec="hepsi" aria-pressed="true">Tümü (7)</button>
+  <button data-suzgec="dikkat" aria-pressed="false">Dikkat (4)</button>
+  <a class="indir" href="Talepler.xlsx" download>Excel olarak indir</a>
+</div>
+<div class="sarmal"><table><thead><tr><th>Talep No</th><th>Satır</th><th>Uyarılar</th><th>Talep Tarihi</th><th>Talep Eden</th><th>Pozisyon</th><th>Kişi</th><th>Başlama</th><th>Bitiş</th><th>Bölge</th><th>Proje Kodu</th><th>Proje Adı</th><th>Süre Tipi</th><th>Süre</th><th>Bölge Müdürü</th><th>Bölge Direktörü</th><th>Proje Adresi</th><th>Tekrar</th></tr></thead><tbody><tr><td class="no">968271</td><td>1</td><td><span class="rozetler"><span class="rozet">Güncellenmiş (2×)</span></span></td><td>20.08.2026</td><td>AHMET YILMAZ</td><td>Makinacı Personel</td><td>2</td><td>01.09.2026</td><td>31.10.2026</td><td>Bölge 1</td><td>3.4.17.ORN.203</td><td>ÖRNEK OTOMOTİV SERVİS</td><td>Günlük</td><td>60</td><td>MEHMET KAYA</td><td>AYŞE ŞAHİN</td><td>Merkez Mah. Örnek Cad. No:1, 34000 İstanbul</td><td>2</td></tr>
+<tr class="dikkat"><td class="no">968402</td><td>1</td><td><span class="rozetler"><span class="rozet onemli">Yaklaşan (2 gün)</span></span></td><td>28.08.2026</td><td>ZEYNEP DEMİR</td><td>Forklift Operatörü</td><td>2</td><td>10.09.2026</td><td>09.12.2026</td><td>Bölge 1</td><td>3.4.17.ORN.204</td><td>ÖRNEK LOJİSTİK DEPO</td><td>Günlük</td><td>90</td><td>MEHMET KAYA</td><td>AYŞE ŞAHİN</td><td>Sanayi Mah. Örnek Sok. No:2, 41000 Kocaeli</td><td>1</td></tr>
+<tr class="dikkat"><td class="no">968402</td><td>2</td><td><span class="rozetler"><span class="rozet onemli">Yaklaşan (2 gün)</span></span></td><td>28.08.2026</td><td>ZEYNEP DEMİR</td><td>Temizlik Personeli</td><td>5</td><td>10.09.2026</td><td>09.12.2026</td><td>Bölge 2</td><td>3.4.18.ORN.101</td><td>ÖRNEK ENERJİ SAHA</td><td>Günlük</td><td>90</td><td>MURAT ÇELİK</td><td>AYŞE ŞAHİN</td><td>Sanayi Mah. Örnek Sok. No:2, 41000 Kocaeli</td><td>1</td></tr>
+<tr><td class="no">968402</td><td>3</td><td></td><td>28.08.2026</td><td>ZEYNEP DEMİR</td><td>Güvenlik Görevlisi</td><td>3</td><td>15.09.2026</td><td>14.12.2026</td><td>Bölge 2</td><td>3.4.18.ORN.101</td><td>ÖRNEK ENERJİ SAHA</td><td>Vardiyalı</td><td>90</td><td>MURAT ÇELİK</td><td>AYŞE ŞAHİN</td><td>Sanayi Mah. Örnek Sok. No:2, 41000 Kocaeli</td><td>1</td></tr>
+<tr class="dikkat"><td class="no">968515</td><td>1</td><td><span class="rozetler"><span class="rozet onemli">Geriye dönük (33 gün)</span> <span class="rozet">Süresi dolmuş</span></span></td><td>03.09.2026</td><td>AHMET YILMAZ</td><td>Makinacı Personel</td><td>1</td><td>01.08.2026</td><td>31.08.2026</td><td>Bölge 1</td><td>3.4.17.ORN.203</td><td>ÖRNEK OTOMOTİV SERVİS</td><td>Günlük</td><td>30</td><td>MEHMET KAYA</td><td>AYŞE ŞAHİN</td><td>Merkez Mah. Örnek Cad. No:1, 34000 İstanbul</td><td>1</td></tr>
+<tr class="dikkat"><td class="no">968530</td><td>1</td><td><span class="rozetler"><span class="rozet onemli">Eksik alan: personel sayısı, bitiş tarihi</span></span></td><td>04.09.2026</td><td>ZEYNEP DEMİR</td><td>Kaynakçı</td><td>—</td><td>20.09.2026</td><td>—</td><td>Bölge 2</td><td>3.4.18.ORN.102</td><td>ÖRNEK ENERJİ BAKIM</td><td>Günlük</td><td>—</td><td>MURAT ÇELİK</td><td>—</td><td>—</td><td>1</td></tr>
+<tr><td class="no">968544</td><td>1</td><td></td><td>05.09.2026</td><td>ahmet yılmaz</td><td>Yıkamacı Personel</td><td>4</td><td>25.09.2026</td><td>25.10.2026</td><td>Bölge 1</td><td>3.4.17.ORN.205</td><td>ÖRNEK OTOMOTİV YIKAMA</td><td>günlük</td><td>30</td><td>mehmet kaya</td><td>AYŞE ŞAHİN</td><td>Örnek Mah. No:3, 34000 İstanbul</td><td>1</td></tr></tbody></table></div>
+<section class="ozet">
+<h2>Her sabah gelen e-posta</h2>
+<div class="zarf">
+  <p class="konu">4 talep ilgilenmenizi bekliyor · toplam 7</p>
+  <ul><li>968402 · Forklift Operatörü · 2 kişi → Yaklaşan (2 gün)</li><li>968402 · Temizlik Personeli · 5 kişi → Yaklaşan (2 gün)</li><li>968515 · Makinacı Personel · 1 kişi → Geriye dönük (33 gün)</li><li>968530 · Kaynakçı → Eksik alan: personel sayısı, bitiş tarihi</li></ul>
+</div>
+<p class="ozet-not">Listeye ancak bir şey yapmanız gerekiyorsa girersiniz.
+Ürünün ölçüsü budur: ne kadar az girerseniz o kadar iyi çalışıyordur.</p>
+</section>
+</div><script>
+const dugmeler=[...document.querySelectorAll('.suzgec button')];
+const satirlar=[...document.querySelectorAll('tbody tr')];
+dugmeler.forEach(d=>d.addEventListener('click',()=>{
+  dugmeler.forEach(b=>b.setAttribute('aria-pressed', b===d));
+  const s=d.dataset.suzgec;
+  satirlar.forEach(r=>{
+    r.hidden = s==='dikkat' ? !r.classList.contains('dikkat') : false;
+  });
+}));
+</script></body></html>
